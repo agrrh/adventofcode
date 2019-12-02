@@ -1,5 +1,8 @@
+import math
+
+
 def fuel_reqs(m):
-    r = m / 3 - 2
+    r = math.floor(m / 3) - 2
     return r if r > 0 else 0
 
 
