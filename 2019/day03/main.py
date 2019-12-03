@@ -9,9 +9,7 @@ with open(fname) as fp:
         in fp.readlines()
     ]
 
-# print('cables')
 # print(cables)
-
 
 def path(cable):
     dirs = {
@@ -38,27 +36,14 @@ def path(cable):
 
 
 paths = [path(cable) for cable in cables]
-print(paths)
-
-
-# Not sure why this not works
-# def intersections(paths):
-#     isect = {}
-#     for path in paths:
-#         for pos in path:
-#             isect[pos] = isect.get(pos, 0) + 1
-#
-#     return {k: v for k, v in isect.items() if v > 1 and k != (0, 0)}
-#
-#
-# intersections = intersections(paths)
+# print(paths)
 
 p1 = paths[0]
 p2 = paths[1]
 
 intersections = set(p1).intersection(p2)
 
-print(intersections)
+# print(intersections)
 
 distances = [abs(x) + abs(y) for (x, y) in intersections]
 distances.sort()
@@ -75,6 +60,6 @@ for isect in intersections:
 
 prices.sort()
 
-print(prices[:2])
+print(prices[1])
 
 print('done')
